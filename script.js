@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function goToSignup() {
   if (localStorage.getItem("loggedIn")) {
-    window.location.href = "project.html";
+    window.location.href = "index.html";
   } else {
     window.location.href = "signup.html";
   }
@@ -27,13 +27,13 @@ function goToSignup() {
 function signup() {
   alert("Signup successful!");
   localStorage.setItem("loggedIn", "true");
-  window.location.href = "project.html";
+  window.location.href = "index.html";
 }
 
 function login() {
   alert("Login successful!");
   localStorage.setItem("loggedIn", "true");
-  window.location.href = "project.html";
+  window.location.href = "index.html";
 }
 
 function logout() {
