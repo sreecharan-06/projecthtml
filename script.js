@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   const loggedIn = localStorage.getItem("loggedIn");
+
   const signinBtn = document.getElementById("signin-btn");
   const signupBtn = document.getElementById("signup-btn");
   const signoutBtn = document.getElementById("signout-btn");
@@ -17,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function goToSignup() {
   if (localStorage.getItem("loggedIn")) {
-    window.location.href = "index.html";
+    window.location.href = "project.html";
   } else {
     window.location.href = "signup.html";
   }
@@ -26,13 +27,13 @@ function goToSignup() {
 function signup() {
   alert("Signup successful!");
   localStorage.setItem("loggedIn", "true");
-  window.location.href = "index.html";
+  window.location.href = "project.html";
 }
 
 function login() {
   alert("Login successful!");
   localStorage.setItem("loggedIn", "true");
-  window.location.href = "index.html";
+  window.location.href = "project.html";
 }
 
 function logout() {
