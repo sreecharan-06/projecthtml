@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CareerPath</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+
+<header class="header">
+  <h1 class="logo">Career<span>Path</span></h1>
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#careers">Careers</a></li>
+      <li><a href="#counselors">Counselors</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li id="signin-btn"><a href="signin.html" class="btn-secondary">Sign In</a></li>
+      <li id="signup-btn"><a href="signup.html" class="btn-primary">Sign Up</a></li>
+      <li id="signout-btn" style="display:none;">
+        <a href="#" class="btn-secondary" onclick="logout()">Sign Out</a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<section id="home" class="hero">
+  <video autoplay muted loop id="bg-video">
+    <source src="images/videocareer.mp4" type="video/mp4">
+  </video>
+
+  <div class="hero-content">
+    <h2>Discover Your Perfect Career Path</h2>
+    <p>Get guidance, explore careers, and connect with mentors.</p>
+    <button class="btn-primary" onclick="goToSignup()">Get Started</button>
+  </div>
+</section>
+
+<section id="careers" class="section">
+  <h2>Explore Career Paths</h2>
+  <div class="cards">
+    <a href="engineering.html" class="card-link">
+      <div class="card">
+        <img src="images/engineering.jpg">
+        <h3>Engineering</h3>
+        <p>Find your path in tech and innovation.</p>
+      </div>
+    </a>
+    <a href="design.html" class="card-link">
+      <div class="card">
+        <img src="images/design.jpg">
+        <h3>Design</h3>
+        <p>Unleash creativity.</p>
+      </div>
+    </a>
+    <a href="medicine.html" class="card-link">
+      <div class="card">
+        <img src="images/medicine.jpg">
+        <h3>Medicine</h3>
+        <p>Serve lives & healthcare.</p>
+      </div>
+    </a>
+  </div>
+</section>
+
+<section id="counselors" class="section">
+  <h2>Meet Our Counselors</h2>
+  <div class="cards">
+    <div class="card">
+      <a href="counselor.html"><img src="images/counselor1.jpg"></a>
+      <h3>Dr. Sarah Lee</h3>
+      <p>Career Coach | 10+ years</p>
+    </div>
+    <div class="card">
+      <a href="counselor.html"><img src="images/counselor2.jpg"></a>
+      <h3>John Carter</h3>
+      <p>HR Expert | 8+ years</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 CareerPath. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

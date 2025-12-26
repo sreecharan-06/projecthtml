@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+  <h1 class="logo">Career<span>Path</span></h1>
+  <nav>
+    <ul>
+      <li><a href="project.html">Home</a></li>
+      <li><a href="counselors.html">Counselors</a></li>
+      <li><a href="signin.html">Sign In</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="section contact">
+  <h2 class="page-title">Contact Us</h2>
+  <p class="page-subtitle">We are here to help you</p>
+
+  <form onsubmit="event.preventDefault(); alert('Message sent successfully!');">
+    <input type="text" placeholder="Your Name" required>
+    <input type="email" placeholder="Your Email" required>
+    <textarea rows="5" placeholder="Your Message"></textarea>
+    <button class="btn-primary">Send Message</button>
+  </form>
+</section>
+
+<footer>
+  <p>© 2025 CareerPath. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
