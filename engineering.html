@@ -2,25 +2,230 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Engineering Career</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Engineering Career Roadmap | CareerPath</title>
   <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
 </head>
 <body>
 
 <header class="header">
-  <h1 class="logo">Career<span>Path</span></h1>
+  <a href="index.html" class="logo">
+    <div class="logo-icon">✦</div>
+    Career<span>Path</span>
+  </a>
+
+  <button class="mobile-toggle" aria-label="Toggle Menu">☰</button>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#careers" class="active">Careers</a></li>
+      <li><a href="counselor.html">Counselors</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+
+      <li id="user-badge" class="user-badge" style="display:none;"></li>
+
+      <li id="signin-btn">
+        <a href="signin.html" class="btn-secondary">Sign In</a>
+      </li>
+
+      <li id="signup-btn">
+        <a href="signup.html" class="btn-primary">Sign Up</a>
+      </li>
+
+      <li id="signout-btn" style="display:none;">
+        <a href="#" class="btn-secondary" onclick="logout()">Sign Out</a>
+      </li>
+    </ul>
+  </nav>
 </header>
 
 <section class="section engineering-page">
-  <h2 class="page-title">Engineering Career Path</h2>
-  <p class="page-subtitle">Technology & innovation careers</p>
+  <div class="breadcrumbs">
+    <a href="index.html">Home</a>
+    <span>/</span>
+    <a href="index.html#careers">Careers</a>
+    <span>/</span>
+    <span>Engineering</span>
+  </div>
+
+  <div class="section-header">
+    <div class="badge badge-primary">STEM & Innovation Track</div>
+    <h2 class="page-title">Engineering Career Roadmaps</h2>
+    <p class="page-subtitle">From software architectures and embedded chips to advanced robotics, explore required competencies and salary benchmarks across core engineering fields.</p>
+  </div>
 
   <div class="cards">
-    <div class="card"><h3>Computer Science</h3></div>
-    <div class="card"><h3>Mechanical</h3></div>
-    <div class="card"><h3>Electrical</h3></div>
+    <!-- Card 1: Computer Science -->
+    <div class="card">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px;">
+        <span class="badge badge-primary">High Demand</span>
+        <span style="font-size: 13px; color: var(--accent-emerald); font-weight: 700;">$115k - $165k / yr</span>
+      </div>
+      <h3>Computer Science & AI</h3>
+      <p>Design modern distributed architectures, scalable web applications, and intelligent machine learning models.</p>
+      
+      <div style="display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0 16px;">
+        <span class="badge badge-cyan" style="text-transform: none; font-size: 11.5px;">Python / JS</span>
+        <span class="badge badge-cyan" style="text-transform: none; font-size: 11.5px;">Algorithms & DSA</span>
+        <span class="badge badge-cyan" style="text-transform: none; font-size: 11.5px;">Cloud (AWS/GCP)</span>
+      </div>
+
+      <h4 style="font-size: 14px; color: #fff; margin-bottom: 8px;">Key Milestones:</h4>
+      <ul class="roadmap-list">
+        <li class="roadmap-item">
+          <span class="roadmap-bullet">1</span>
+          <span>Master data structures, algorithms, and git version control.</span>
+        </li>
+        <li class="roadmap-item">
+          <span class="roadmap-bullet">2</span>
+          <span>Build production-ready full-stack apps with automated testing.</span>
+        </li>
+        <li class="roadmap-item">
+          <span class="roadmap-bullet">3</span>
+          <span>Learn system design, distributed caches, and cloud deployment.</span>
+        </li>
+      </ul>
+
+      <div class="card-meta" style="margin-top: 14px;">
+        <span>Roles: Full Stack, ML Engineer, DevOps</span>
+        <a href="counselor.html" class="card-action-link">Consult Mentor →</a>
+      </div>
+    </div>
+
+    <!-- Card 2: Mechanical -->
+    <div class="card">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px;">
+        <span class="badge badge-gold">Hardware Core</span>
+        <span style="font-size: 13px; color: var(--accent-emerald); font-weight: 700;">$88k - $130k / yr</span>
+      </div>
+      <h3>Mechanical & Robotics</h3>
+      <p>Engineer physical machines, autonomous drone systems, automotive platforms, and renewable energy machinery.</p>
+      
+      <div style="display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0 16px;">
+        <span class="badge badge-gold" style="text-transform: none; font-size: 11.5px;">SolidWorks / CAD</span>
+        <span class="badge badge-gold" style="text-transform: none; font-size: 11.5px;">Robotics & ROS</span>
+        <span class="badge badge-gold" style="text-transform: none; font-size: 11.5px;">Thermodynamics</span>
+      </div>
+
+      <h4 style="font-size: 14px; color: #fff; margin-bottom: 8px;">Key Milestones:</h4>
+      <ul class="roadmap-list">
+        <li class="roadmap-item">
+          <span class="roadmap-bullet">1</span>
+          <span>Solid foundation in statics, dynamics, and material science.</span>
+        </li>
+        <li class="roadmap-item">
+          <span class="roadmap-bullet">2</span>
+          <span>Hands-on CAD modeling, tolerance analysis, and 3D printing.</span>
+        </li>
+        <li class="roadmap-item">
+          <span class="roadmap-bullet">3</span>
+          <span>Hardware prototyping, kinematics, and industrial manufacturing.</span>
+        </li>
+      </ul>
+
+      <div class="card-meta" style="margin-top: 14px;">
+        <span>Roles: Robotics Engineer, CAD Specialist</span>
+        <a href="counselor.html" class="card-action-link">Consult Mentor →</a>
+      </div>
+    </div>
+
+    <!-- Card 3: Electrical -->
+    <div class="card">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px;">
+        <span class="badge badge-cyan">Semiconductors</span>
+        <span style="font-size: 13px; color: var(--accent-emerald); font-weight: 700;">$95k - $140k / yr</span>
+      </div>
+      <h3>Electrical & Electronics</h3>
+      <p>Pioneer microcontroller firmwares, circuit architectures, microprocessors, and smart IoT connected sensors.</p>
+      
+      <div style="display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0 16px;">
+        <span class="badge badge-cyan" style="text-transform: none; font-size: 11.5px;">Embedded C / C++</span>
+        <span class="badge badge-cyan" style="text-transform: none; font-size: 11.5px;">PCB Layout (KiCad)</span>
+        <span class="badge badge-cyan" style="text-transform: none; font-size: 11.5px;">FPGA / Verilog</span>
+      </div>
+
+      <h4 style="font-size: 14px; color: #fff; margin-bottom: 8px;">Key Milestones:</h4>
+      <ul class="roadmap-list">
+        <li class="roadmap-item">
+          <span class="roadmap-bullet">1</span>
+          <span>Analog and digital circuits, logic gates, and microcontroller I/O.</span>
+        </li>
+        <li class="roadmap-item">
+          <span class="roadmap-bullet">2</span>
+          <span>Schematic capture, multi-layer PCB design, and soldering labs.</span>
+        </li>
+        <li class="roadmap-item">
+          <span class="roadmap-bullet">3</span>
+          <span>Real-time operating systems (RTOS) and communication protocols.</span>
+        </li>
+      </ul>
+
+      <div class="card-meta" style="margin-top: 14px;">
+        <span>Roles: Embedded Engineer, Firmware Lead</span>
+        <a href="counselor.html" class="card-action-link">Consult Mentor →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Advisor CTA Strip -->
+  <div style="margin-top: 50px; background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 36px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
+    <div>
+      <h3 style="font-size: 20px; color: #fff; margin-bottom: 6px;">Need guidance picking your engineering major?</h3>
+      <p style="color: var(--text-muted); font-size: 14px;">Our engineering mentors can evaluate your academic strengths and goals in a 45-minute 1-on-1 strategy call.</p>
+    </div>
+    <a href="counselor.html" class="btn-primary">Book an Engineering Mentor →</a>
   </div>
 </section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-content">
+    <div class="footer-brand">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">✦</div>
+        Career<span>Path</span>
+      </a>
+      <p>Data-driven roadmaps and live industry coaching for aspiring technical leaders.</p>
+    </div>
+
+    <div class="footer-col">
+      <h5>Tracks</h5>
+      <ul>
+        <li><a href="engineering.html">Engineering</a></li>
+        <li><a href="design.html">Design</a></li>
+        <li><a href="medicine.html">Medicine</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h5>Navigation</h5>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="counselor.html">Counselors</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h5>Account</h5>
+      <ul>
+        <li><a href="signin.html">Sign In</a></li>
+        <li><a href="signup.html">Create Account</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 CareerPath. All rights reserved.</p>
+    <p>Engineering & STEM Trajectories.</p>
+  </div>
+</footer>
+
+<div id="toast-container"></div>
 
 </body>
 </html>

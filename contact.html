@@ -3,37 +3,183 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Us</title>
+  <title>Contact Us | CareerPath</title>
   <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
 </head>
 <body>
 
 <header class="header">
-  <h1 class="logo">Career<span>Path</span></h1>
+  <a href="index.html" class="logo">
+    <div class="logo-icon">✦</div>
+    Career<span>Path</span>
+  </a>
+
+  <button class="mobile-toggle" aria-label="Toggle Menu">☰</button>
+
   <nav>
     <ul>
       <li><a href="index.html">Home</a></li>
-      <li><a href="counselors.html">Counselors</a></li>
-      <li><a href="signin.html">Sign In</a></li>
+      <li><a href="index.html#careers">Careers</a></li>
+      <li><a href="counselor.html">Counselors</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+
+      <li id="user-badge" class="user-badge" style="display:none;"></li>
+
+      <li id="signin-btn">
+        <a href="signin.html" class="btn-secondary">Sign In</a>
+      </li>
+
+      <li id="signup-btn">
+        <a href="signup.html" class="btn-primary">Sign Up</a>
+      </li>
+
+      <li id="signout-btn" style="display:none;">
+        <a href="#" class="btn-secondary" onclick="logout()">Sign Out</a>
+      </li>
     </ul>
   </nav>
 </header>
 
 <section class="section contact">
-  <h2 class="page-title">Contact Us</h2>
-  <p class="page-subtitle">We are here to help you</p>
+  <div class="breadcrumbs">
+    <a href="index.html">Home</a>
+    <span>/</span>
+    <span>Contact</span>
+  </div>
 
-  <form onsubmit="event.preventDefault(); alert('Message sent successfully!');">
-    <input type="text" placeholder="Your Name" required>
-    <input type="email" placeholder="Your Email" required>
-    <textarea rows="5" placeholder="Your Message"></textarea>
-    <button class="btn-primary">Send Message</button>
-  </form>
+  <div class="section-header">
+    <div class="badge badge-cyan">Direct Communication</div>
+    <h2 class="page-title">We're Here to Guide You</h2>
+    <p class="page-subtitle">Have questions about university roadmaps, counselor availability, or institutional partnerships? Reach out directly to our team.</p>
+  </div>
+
+  <div class="contact-container">
+    <!-- Contact Form -->
+    <form onsubmit="handleContactSubmit(event)">
+      <h3 style="font-size: 20px; color: #fff; margin-bottom: 4px;">Send us a message</h3>
+      <p style="font-size: 13.5px; color: var(--text-muted); margin-bottom: 12px;">Our academic advisory team usually responds within 24 business hours.</p>
+
+      <div class="form-group">
+        <label>Your Name</label>
+        <div class="input-field-wrapper">
+          <input type="text" placeholder="e.g. Alex Morgan" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Your Email</label>
+        <div class="input-field-wrapper">
+          <input type="email" placeholder="e.g. alex@example.com" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Inquiry Topic</label>
+        <div class="input-field-wrapper">
+          <select style="width: 100%; padding: 12px 16px; background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border-color); border-radius: var(--radius-md); color: #fff; font-size: 14.5px; outline: none;">
+            <option value="advising" style="background:#0f172a; color:#fff;">1-on-1 Mentorship Inquiry</option>
+            <option value="roadmap" style="background:#0f172a; color:#fff;">Career Roadmap Questions</option>
+            <option value="partnership" style="background:#0f172a; color:#fff;">University / Campus Partnerships</option>
+            <option value="other" style="background:#0f172a; color:#fff;">General Support</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Your Message</label>
+        <div class="input-field-wrapper">
+          <textarea rows="4" placeholder="Describe what you need assistance with..." required></textarea>
+        </div>
+      </div>
+
+      <button type="submit" class="btn-primary" style="margin-top: 8px;">Send Inquiry Message →</button>
+    </form>
+
+    <!-- Support Details & FAQ -->
+    <div class="contact-info-panel">
+      <div class="contact-info-card">
+        <div class="feature-icon" style="margin-bottom: 0;">✉️</div>
+        <div>
+          <h4 style="font-size: 16px; color: #fff; margin-bottom: 2px;">Email Support</h4>
+          <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 0;">advising@careerpath.edu</p>
+        </div>
+      </div>
+
+      <div class="contact-info-card">
+        <div class="feature-icon" style="margin-bottom: 0;">📍</div>
+        <div>
+          <h4 style="font-size: 16px; color: #fff; margin-bottom: 2px;">Advisory Center</h4>
+          <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 0;">500 Innovation Way, Suite 400, Tech Park</p>
+        </div>
+      </div>
+
+      <div class="contact-info-card">
+        <div class="feature-icon" style="margin-bottom: 0;">⏱️</div>
+        <div>
+          <h4 style="font-size: 16px; color: #fff; margin-bottom: 2px;">Consultation Hours</h4>
+          <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 0;">Monday – Saturday: 9:00 AM – 7:00 PM EST</p>
+        </div>
+      </div>
+
+      <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 24px;">
+        <h4 style="font-size: 16px; color: #fff; margin-bottom: 8px;">Common Question:</h4>
+        <p style="font-size: 13.5px; color: var(--text-muted); line-height: 1.6; margin-bottom: 12px;">
+          <strong>Are initial counselor consultations free?</strong> Yes! All registered students receive one complimentary 30-minute discovery session with any verified mentor.
+        </p>
+        <a href="counselor.html" class="card-action-link">Browse Available Mentors →</a>
+      </div>
+    </div>
+  </div>
 </section>
 
+<!-- FOOTER -->
 <footer>
-  <p>© 2025 CareerPath. All rights reserved.</p>
+  <div class="footer-content">
+    <div class="footer-brand">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">✦</div>
+        Career<span>Path</span>
+      </a>
+      <p>The trusted career navigation ecosystem empowering learners with modern roadmap intelligence and executive mentoring.</p>
+    </div>
+
+    <div class="footer-col">
+      <h5>Tracks</h5>
+      <ul>
+        <li><a href="engineering.html">Engineering</a></li>
+        <li><a href="design.html">Design</a></li>
+        <li><a href="medicine.html">Medicine</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h5>Navigation</h5>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="counselor.html">Counselors</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h5>Account</h5>
+      <ul>
+        <li><a href="signin.html">Sign In</a></li>
+        <li><a href="signup.html">Create Account</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 CareerPath. All rights reserved.</p>
+    <p>Empowering Next-Generation Talent Worldwide.</p>
+  </div>
 </footer>
+
+<div id="toast-container"></div>
 
 </body>
 </html>

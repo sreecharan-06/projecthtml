@@ -2,20 +2,69 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Sign Up</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up | CareerPath</title>
   <link rel="stylesheet" href="style.css">
   <script defer src="script.js"></script>
 </head>
-<body>
+<body style="min-height: 100vh; display: flex; flex-direction: column;">
 
-<div class="login-box">
-  <h2>Create Account</h2>
-  <input type="text" placeholder="Full Name">
-  <input type="email" placeholder="Email">
-  <input type="password" placeholder="Password">
-  <button class="btn-primary" onclick="signup()">Sign Up</button>
-  <p>Already have account? <a href="signin.html">Sign In</a></p>
+<header class="header">
+  <a href="index.html" class="logo">
+    <div class="logo-icon">✦</div>
+    Career<span>Path</span>
+  </a>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#careers">Careers</a></li>
+      <li><a href="counselor.html">Counselors</a></li>
+      <li><a href="signin.html" class="btn-secondary btn-sm">Sign In</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="auth-wrapper">
+  <div class="login-box">
+    <div class="badge badge-primary" style="margin-bottom: 12px;">Get Started Free</div>
+    <h2>Create Your Account</h2>
+    <p class="subtitle">Join over 25,000 students exploring roadmaps and connecting with verified industry mentors.</p>
+
+    <form onsubmit="signup(event)">
+      <div class="form-group">
+        <label>Full Name</label>
+        <div class="input-field-wrapper">
+          <input type="text" placeholder="e.g. Alex Morgan" required value="Alex Morgan">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Email Address</label>
+        <div class="input-field-wrapper">
+          <input type="email" id="signup-email" placeholder="name@domain.com" required value="alex.student@careerpath.edu">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Password</label>
+        <div class="input-field-wrapper">
+          <input type="password" placeholder="••••••••" required value="SecurePass123!">
+        </div>
+      </div>
+
+      <button type="submit" class="btn-primary" onclick="signup(event)">Create Account →</button>
+    </form>
+
+    <div class="demo-login-bar">
+      <button type="button" class="demo-btn" onclick="fillDemoAuth('signup')">⚡ Quick-Fill Demo Info</button>
+    </div>
+
+    <p>Already have an account? <a href="signin.html">Sign In</a></p>
+  </div>
 </div>
+
+<div id="toast-container"></div>
 
 </body>
 </html>

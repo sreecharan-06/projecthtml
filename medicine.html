@@ -2,24 +2,230 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Medical Career</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Medical & Healthcare Career Roadmap | CareerPath</title>
   <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
 </head>
 <body>
 
 <header class="header">
-  <h1 class="logo">Career<span>Path</span></h1>
+  <a href="index.html" class="logo">
+    <div class="logo-icon">✦</div>
+    Career<span>Path</span>
+  </a>
+
+  <button class="mobile-toggle" aria-label="Toggle Menu">☰</button>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#careers" class="active">Careers</a></li>
+      <li><a href="counselor.html">Counselors</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+
+      <li id="user-badge" class="user-badge" style="display:none;"></li>
+
+      <li id="signin-btn">
+        <a href="signin.html" class="btn-secondary">Sign In</a>
+      </li>
+
+      <li id="signup-btn">
+        <a href="signup.html" class="btn-primary">Sign Up</a>
+      </li>
+
+      <li id="signout-btn" style="display:none;">
+        <a href="#" class="btn-secondary" onclick="logout()">Sign Out</a>
+      </li>
+    </ul>
+  </nav>
 </header>
 
 <section class="section medicine-page">
-  <h2 class="page-title">Medical Career Path</h2>
+  <div class="breadcrumbs">
+    <a href="index.html">Home</a>
+    <span>/</span>
+    <a href="index.html#careers">Careers</a>
+    <span>/</span>
+    <span>Medicine</span>
+  </div>
+
+  <div class="section-header">
+    <div class="badge badge-emerald">Healthcare & Bio Track</div>
+    <h2 class="page-title">Medical & Healthcare Roadmaps</h2>
+    <p class="page-subtitle">Dedicate your career to saving lives and clinical innovation. Understand qualification pipelines, residency timelines, and specialized domains.</p>
+  </div>
 
   <div class="cards">
-    <div class="card"><h3>MBBS</h3></div>
-    <div class="card"><h3>Specialist</h3></div>
-    <div class="card"><h3>Research</h3></div>
+    <!-- Card 1: MBBS / MD -->
+    <div class="card">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px;">
+        <span class="badge badge-emerald">Core Clinical</span>
+        <span style="font-size: 13px; color: var(--accent-emerald); font-weight: 700;">$180k - $270k / yr</span>
+      </div>
+      <h3>General Medicine & MD</h3>
+      <p>Direct patient diagnosis, acute care treatment plans, preventive healthcare, and community health management.</p>
+      
+      <div style="display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0 16px;">
+        <span class="badge badge-emerald" style="text-transform: none; font-size: 11.5px;">Pathology</span>
+        <span class="badge badge-emerald" style="text-transform: none; font-size: 11.5px;">Pharmacology</span>
+        <span class="badge badge-emerald" style="text-transform: none; font-size: 11.5px;">Emergency Care</span>
+      </div>
+
+      <h4 style="font-size: 14px; color: #fff; margin-bottom: 8px;">Key Milestones:</h4>
+      <ul class="roadmap-list">
+        <li class="roadmap-item">
+          <span class="roadmap-bullet">1</span>
+          <span>Pre-medical sciences (Biology, Organic Chemistry) and competitive entrance (MCAT/NEET).</span>
+        </li>
+        <li class="roadmap-item">
+          <span class="roadmap-bullet">2</span>
+          <span>4-5 years medical school coursework and supervised hospital clerkships.</span>
+        </li>
+        <li class="roadmap-item">
+          <span class="roadmap-bullet">3</span>
+          <span>Residency training program, licensing board exams, and independent practice credentialing.</span>
+        </li>
+      </ul>
+
+      <div class="card-meta" style="margin-top: 14px;">
+        <span>Roles: Physician, General Practitioner</span>
+        <a href="counselor.html" class="card-action-link">Consult Advisor →</a>
+      </div>
+    </div>
+
+    <!-- Card 2: Specialist & Surgery -->
+    <div class="card">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px;">
+        <span class="badge badge-primary">Super Specialty</span>
+        <span style="font-size: 13px; color: var(--accent-emerald); font-weight: 700;">$260k - $450k / yr</span>
+      </div>
+      <h3>Surgery & Subspecialties</h3>
+      <p>Advanced surgical precision in cardiology, neurology, orthopedics, oncology, and minimally invasive robotic procedures.</p>
+      
+      <div style="display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0 16px;">
+        <span class="badge badge-primary" style="text-transform: none; font-size: 11.5px;">Surgical Tech</span>
+        <span class="badge badge-primary" style="text-transform: none; font-size: 11.5px;">Neuroanatomy</span>
+        <span class="badge badge-primary" style="text-transform: none; font-size: 11.5px;">Advanced Imaging</span>
+      </div>
+
+      <h4 style="font-size: 14px; color: #fff; margin-bottom: 8px;">Key Milestones:</h4>
+      <ul class="roadmap-list">
+        <li class="roadmap-item">
+          <span class="roadmap-bullet">1</span>
+          <span>Complete 5-year general surgery residency with intensive operating room hours.</span>
+        </li>
+        <li class="roadmap-item">
+          <span class="roadmap-bullet">2</span>
+          <span>Pursue 2-3 year specialized surgical fellowship (e.g., Cardiothoracic or Pediatric).</span>
+        </li>
+        <li class="roadmap-item">
+          <span class="roadmap-bullet">3</span>
+          <span>Subspecialty board certification and hospital attending privileges.</span>
+        </li>
+      </ul>
+
+      <div class="card-meta" style="margin-top: 14px;">
+        <span>Roles: Surgeon, Cardiologist, Neurologist</span>
+        <a href="counselor.html" class="card-action-link">Consult Advisor →</a>
+      </div>
+    </div>
+
+    <!-- Card 3: Research & Biotech -->
+    <div class="card">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px;">
+        <span class="badge badge-cyan">Biotechnology</span>
+        <span style="font-size: 13px; color: var(--accent-emerald); font-weight: 700;">$98k - $160k / yr</span>
+      </div>
+      <h3>Clinical Research & Biotech</h3>
+      <p>Lead revolutionary clinical trials, vaccine discovery, gene editing therapeutics, and pharmaceutical development.</p>
+      
+      <div style="display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0 16px;">
+        <span class="badge badge-cyan" style="text-transform: none; font-size: 11.5px;">CRISPR / Genetics</span>
+        <span class="badge badge-cyan" style="text-transform: none; font-size: 11.5px;">Bioinformatics</span>
+        <span class="badge badge-cyan" style="text-transform: none; font-size: 11.5px;">FDA Protocols</span>
+      </div>
+
+      <h4 style="font-size: 14px; color: #fff; margin-bottom: 8px;">Key Milestones:</h4>
+      <ul class="roadmap-list">
+        <li class="roadmap-item">
+          <span class="roadmap-bullet">1</span>
+          <span>Undergraduate & graduate studies in molecular biology, biochemistry, or genomics.</span>
+        </li>
+        <li class="roadmap-item">
+          <span class="roadmap-bullet">2</span>
+          <span>Hands-on wet lab experience, grant writing, and academic research publications.</span>
+        </li>
+        <li class="roadmap-item">
+          <span class="roadmap-bullet">3</span>
+          <span>Manage Phase I-III clinical trials in collaboration with healthcare institutes.</span>
+        </li>
+      </ul>
+
+      <div class="card-meta" style="margin-top: 14px;">
+        <span>Roles: Principal Scientist, Clinical Director</span>
+        <a href="counselor.html" class="card-action-link">Consult Advisor →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Advisor CTA Strip -->
+  <div style="margin-top: 50px; background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 36px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
+    <div>
+      <h3 style="font-size: 20px; color: #fff; margin-bottom: 6px;">Need advice on medical entrance exams or residency options?</h3>
+      <p style="color: var(--text-muted); font-size: 14px;">Speak with certified mentors who have navigated top medical schools and hospital programs.</p>
+    </div>
+    <a href="counselor.html" class="btn-primary">Connect with Medical Mentors →</a>
   </div>
 </section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-content">
+    <div class="footer-brand">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">✦</div>
+        Career<span>Path</span>
+      </a>
+      <p>Empowering medical and health professionals with structured career intelligence.</p>
+    </div>
+
+    <div class="footer-col">
+      <h5>Tracks</h5>
+      <ul>
+        <li><a href="engineering.html">Engineering</a></li>
+        <li><a href="design.html">Design</a></li>
+        <li><a href="medicine.html">Medicine</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h5>Navigation</h5>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="counselor.html">Counselors</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h5>Account</h5>
+      <ul>
+        <li><a href="signin.html">Sign In</a></li>
+        <li><a href="signup.html">Create Account</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 CareerPath. All rights reserved.</p>
+    <p>Medical & Healthcare Trajectories.</p>
+  </div>
+</footer>
+
+<div id="toast-container"></div>
 
 </body>
 </html>

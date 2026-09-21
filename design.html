@@ -2,24 +2,230 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Design Career</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Design & Creative Career Roadmap | CareerPath</title>
   <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
 </head>
 <body>
 
 <header class="header">
-  <h1 class="logo">Career<span>Path</span></h1>
+  <a href="index.html" class="logo">
+    <div class="logo-icon">✦</div>
+    Career<span>Path</span>
+  </a>
+
+  <button class="mobile-toggle" aria-label="Toggle Menu">☰</button>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#careers" class="active">Careers</a></li>
+      <li><a href="counselor.html">Counselors</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+
+      <li id="user-badge" class="user-badge" style="display:none;"></li>
+
+      <li id="signin-btn">
+        <a href="signin.html" class="btn-secondary">Sign In</a>
+      </li>
+
+      <li id="signup-btn">
+        <a href="signup.html" class="btn-primary">Sign Up</a>
+      </li>
+
+      <li id="signout-btn" style="display:none;">
+        <a href="#" class="btn-secondary" onclick="logout()">Sign Out</a>
+      </li>
+    </ul>
+  </nav>
 </header>
 
 <section class="section design-page">
-  <h2 class="page-title">Design Career Path</h2>
+  <div class="breadcrumbs">
+    <a href="index.html">Home</a>
+    <span>/</span>
+    <a href="index.html#careers">Careers</a>
+    <span>/</span>
+    <span>Design</span>
+  </div>
+
+  <div class="section-header">
+    <div class="badge badge-gold">Creative & Innovation Track</div>
+    <h2 class="page-title">Design & UX Career Roadmaps</h2>
+    <p class="page-subtitle">Blend aesthetics, user empathy, and product strategy. Discover career milestones and salary expectations across digital and product design disciplines.</p>
+  </div>
 
   <div class="cards">
-    <div class="card"><h3>UI / UX</h3></div>
-    <div class="card"><h3>Graphic Design</h3></div>
-    <div class="card"><h3>Product Design</h3></div>
+    <!-- Card 1: UI/UX -->
+    <div class="card">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px;">
+        <span class="badge badge-primary">High Growth</span>
+        <span style="font-size: 13px; color: var(--accent-emerald); font-weight: 700;">$90k - $140k / yr</span>
+      </div>
+      <h3>UI / UX Product Design</h3>
+      <p>Craft user-centric applications, design systems, interactive prototypes, and lead usability research sessions.</p>
+      
+      <div style="display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0 16px;">
+        <span class="badge badge-cyan" style="text-transform: none; font-size: 11.5px;">Figma / FigJam</span>
+        <span class="badge badge-cyan" style="text-transform: none; font-size: 11.5px;">User Research</span>
+        <span class="badge badge-cyan" style="text-transform: none; font-size: 11.5px;">Design Systems</span>
+      </div>
+
+      <h4 style="font-size: 14px; color: #fff; margin-bottom: 8px;">Key Milestones:</h4>
+      <ul class="roadmap-list">
+        <li class="roadmap-item">
+          <span class="roadmap-bullet">1</span>
+          <span>Conduct qualitative user interviews, user journey maps, and empathy research.</span>
+        </li>
+        <li class="roadmap-item">
+          <span class="roadmap-bullet">2</span>
+          <span>Build reusable atomic design token components and interactive Figma prototypes.</span>
+        </li>
+        <li class="roadmap-item">
+          <span class="roadmap-bullet">3</span>
+          <span>Formulate rigorous UX case studies highlighting problem statements and quantifiable outcomes.</span>
+        </li>
+      </ul>
+
+      <div class="card-meta" style="margin-top: 14px;">
+        <span>Roles: UX Researcher, Product Designer</span>
+        <a href="counselor.html" class="card-action-link">Review Portfolio →</a>
+      </div>
+    </div>
+
+    <!-- Card 2: Graphic Design -->
+    <div class="card">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px;">
+        <span class="badge badge-gold">Brand Identity</span>
+        <span style="font-size: 13px; color: var(--accent-emerald); font-weight: 700;">$72k - $115k / yr</span>
+      </div>
+      <h3>Brand & Visual Design</h3>
+      <p>Define iconic company identities, typography standards, editorial publications, and marketing campaigns.</p>
+      
+      <div style="display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0 16px;">
+        <span class="badge badge-gold" style="text-transform: none; font-size: 11.5px;">Illustrator</span>
+        <span class="badge badge-gold" style="text-transform: none; font-size: 11.5px;">Typography</span>
+        <span class="badge badge-gold" style="text-transform: none; font-size: 11.5px;">Color Theory</span>
+      </div>
+
+      <h4 style="font-size: 14px; color: #fff; margin-bottom: 8px;">Key Milestones:</h4>
+      <ul class="roadmap-list">
+        <li class="roadmap-item">
+          <span class="roadmap-bullet">1</span>
+          <span>Study typography hierarchy, grid systems, and vector geometry principles.</span>
+        </li>
+        <li class="roadmap-item">
+          <span class="roadmap-bullet">2</span>
+          <span>Craft comprehensive brand identity books including logos, palettes, and tone guidelines.</span>
+        </li>
+        <li class="roadmap-item">
+          <span class="roadmap-bullet">3</span>
+          <span>Execute multi-channel visual advertising, packaging, and digital assets.</span>
+        </li>
+      </ul>
+
+      <div class="card-meta" style="margin-top: 14px;">
+        <span>Roles: Brand Strategist, Art Director</span>
+        <a href="counselor.html" class="card-action-link">Review Portfolio →</a>
+      </div>
+    </div>
+
+    <!-- Card 3: 3D Motion -->
+    <div class="card">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px;">
+        <span class="badge badge-rose">Next-Gen Media</span>
+        <span style="font-size: 13px; color: var(--accent-emerald); font-weight: 700;">$98k - $150k / yr</span>
+      </div>
+      <h3>Motion & 3D Interactive</h3>
+      <p>Transform static layouts into mesmerizing cinematic experiences using 3D rendering, physics simulation, and kinetic motion.</p>
+      
+      <div style="display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0 16px;">
+        <span class="badge badge-rose" style="text-transform: none; font-size: 11.5px;">After Effects</span>
+        <span class="badge badge-rose" style="text-transform: none; font-size: 11.5px;">Blender / Cinema 4D</span>
+        <span class="badge badge-rose" style="text-transform: none; font-size: 11.5px;">Spline 3D</span>
+      </div>
+
+      <h4 style="font-size: 14px; color: #fff; margin-bottom: 8px;">Key Milestones:</h4>
+      <ul class="roadmap-list">
+        <li class="roadmap-item">
+          <span class="roadmap-bullet">1</span>
+          <span>Animation easing curves, timing, anticipatory motion, and secondary action.</span>
+        </li>
+        <li class="roadmap-item">
+          <span class="roadmap-bullet">2</span>
+          <span>3D polygonal modeling, lighting rigs, PBR texturing, and rendering engines.</span>
+        </li>
+        <li class="roadmap-item">
+          <span class="roadmap-bullet">3</span>
+          <span>Produce a world-class motion showreel featuring product reveal animations.</span>
+        </li>
+      </ul>
+
+      <div class="card-meta" style="margin-top: 14px;">
+        <span>Roles: Motion Designer, 3D Generalist</span>
+        <a href="counselor.html" class="card-action-link">Review Portfolio →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Advisor CTA Strip -->
+  <div style="margin-top: 50px; background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 36px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
+    <div>
+      <h3 style="font-size: 20px; color: #fff; margin-bottom: 6px;">Want a professional critique on your design portfolio?</h3>
+      <p style="color: var(--text-muted); font-size: 14px;">Book a 45-minute live portfolio review with design consultant Priya Sharma.</p>
+    </div>
+    <a href="counselor.html" class="btn-primary">Book Portfolio Review →</a>
   </div>
 </section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-content">
+    <div class="footer-brand">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">✦</div>
+        Career<span>Path</span>
+      </a>
+      <p>Empowering designers and creative innovators with industry-ready roadmaps.</p>
+    </div>
+
+    <div class="footer-col">
+      <h5>Tracks</h5>
+      <ul>
+        <li><a href="engineering.html">Engineering</a></li>
+        <li><a href="design.html">Design</a></li>
+        <li><a href="medicine.html">Medicine</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h5>Navigation</h5>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="counselor.html">Counselors</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h5>Account</h5>
+      <ul>
+        <li><a href="signin.html">Sign In</a></li>
+        <li><a href="signup.html">Create Account</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 CareerPath. All rights reserved.</p>
+    <p>Design & Creative Trajectories.</p>
+  </div>
+</footer>
+
+<div id="toast-container"></div>
 
 </body>
 </html>

@@ -3,49 +3,216 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Counselors</title>
+  <title>Meet Our Career Counselors | CareerPath</title>
   <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
 </head>
 <body>
 
 <header class="header">
-  <h1 class="logo">Career<span>Path</span></h1>
+  <a href="index.html" class="logo">
+    <div class="logo-icon">✦</div>
+    Career<span>Path</span>
+  </a>
+
+  <button class="mobile-toggle" aria-label="Toggle Menu">☰</button>
+
   <nav>
     <ul>
       <li><a href="index.html">Home</a></li>
-      <li><a href="project.html#careers">Careers</a></li>
+      <li><a href="index.html#careers">Careers</a></li>
+      <li><a href="counselor.html" class="active">Counselors</a></li>
+      <li><a href="about.html">About</a></li>
       <li><a href="contact.html">Contact</a></li>
+
+      <li id="user-badge" class="user-badge" style="display:none;"></li>
+
+      <li id="signin-btn">
+        <a href="signin.html" class="btn-secondary">Sign In</a>
+      </li>
+
+      <li id="signup-btn">
+        <a href="signup.html" class="btn-primary">Sign Up</a>
+      </li>
+
+      <li id="signout-btn" style="display:none;">
+        <a href="#" class="btn-secondary" onclick="logout()">Sign Out</a>
+      </li>
     </ul>
   </nav>
 </header>
 
 <section class="section">
-  <h2 class="page-title">Our Career Counselors</h2>
-  <p class="page-subtitle">Expert guidance for your future</p>
+  <div class="breadcrumbs">
+    <a href="index.html">Home</a>
+    <span>/</span>
+    <span>Counselors</span>
+  </div>
+
+  <div class="section-header">
+    <div class="badge badge-primary">Certified Mentorship Team</div>
+    <h2 class="page-title">Connect with Industry Experts</h2>
+    <p class="page-subtitle">Schedule private 1-on-1 career navigation calls, mock interviews, and portfolio reviews with seasoned professionals.</p>
+  </div>
+
+  <!-- Category Filter Tabs -->
+  <div class="filter-tabs">
+    <button class="filter-tab active" onclick="filterCounselors('all')">All Counselors</button>
+    <button class="filter-tab" onclick="filterCounselors('tech')">Engineering & Tech</button>
+    <button class="filter-tab" onclick="filterCounselors('hr')">Hiring & HR</button>
+    <button class="filter-tab" onclick="filterCounselors('admissions')">Admissions & Education</button>
+  </div>
 
   <div class="cards">
-    <div class="card">
-      <img src="images/counselor1.jpg" alt="Counselor">
+    <!-- Counselor 1 -->
+    <div class="card counselor-card" data-category="tech engineering">
+      <div class="counselor-avatar">
+        <img src="images/counselor1.jpg" alt="Dr. Sarah Lee">
+      </div>
+      <div class="rating">★★★★★ (4.9 / 5.0 · 340+ sessions)</div>
       <h3>Dr. Sarah Lee</h3>
-      <p>Career Coach | 10+ Years Experience</p>
+      <p>Senior Engineering Manager & Career Coach with 10+ years scaling tech teams. Passionate about guiding aspiring developers and tech innovators.</p>
+      
+      <div class="counselor-specialties">
+        <span class="badge badge-primary">Software Careers</span>
+        <span class="badge badge-cyan">AI & Cloud</span>
+        <span class="badge badge-emerald">Mock Interviews</span>
+      </div>
+
+      <div class="card-meta" style="margin-top: 14px;">
+        <span>Availability: <strong>Tomorrow</strong></span>
+        <button class="btn-primary btn-sm" onclick="openBookingModal('Dr. Sarah Lee')">Book Session</button>
+      </div>
     </div>
 
-    <div class="card">
-      <img src="images/counselor2.jpg" alt="Counselor">
+    <!-- Counselor 2 -->
+    <div class="card counselor-card" data-category="hr business">
+      <div class="counselor-avatar">
+        <img src="images/counselor2.jpg" alt="John Carter">
+      </div>
+      <div class="rating">★★★★★ (4.8 / 5.0 · 290+ sessions)</div>
       <h3>John Carter</h3>
-      <p>HR Expert | 8+ Years Mentoring</p>
+      <p>Senior HR Executive & Corporate Recruiter. Guides candidates through salary negotiations, resume positioning, and leadership transitions.</p>
+      
+      <div class="counselor-specialties">
+        <span class="badge badge-gold">Resume Audit</span>
+        <span class="badge badge-cyan">HR Strategy</span>
+        <span class="badge badge-primary">Offer Negotiation</span>
+      </div>
+
+      <div class="card-meta" style="margin-top: 14px;">
+        <span>Availability: <strong>This Thursday</strong></span>
+        <button class="btn-primary btn-sm" onclick="openBookingModal('John Carter')">Book Session</button>
+      </div>
     </div>
 
-    <div class="card">
+    <!-- Counselor 3 -->
+    <div class="card counselor-card" data-category="admissions education design">
+      <div class="counselor-avatar">
+        <img src="images/counselor3.jpg" alt="Priya Sharma">
+      </div>
+      <div class="rating">★★★★★ (5.0 / 5.0 · 410+ sessions)</div>
       <h3>Priya Sharma</h3>
-      <p>Education Consultant | Career Planning</p>
+      <p>Global Education Advisor & Academic Consultant. Specializes in university admissions strategy, master's programs, and creative portfolios.</p>
+      
+      <div class="counselor-specialties">
+        <span class="badge badge-emerald">University Admissions</span>
+        <span class="badge badge-rose">Design Portfolios</span>
+        <span class="badge badge-cyan">Scholarship Prep</span>
+      </div>
+
+      <div class="card-meta" style="margin-top: 14px;">
+        <span>Availability: <strong>Friday</strong></span>
+        <button class="btn-primary btn-sm" onclick="openBookingModal('Priya Sharma')">Book Session</button>
+      </div>
     </div>
   </div>
 </section>
 
+<!-- BOOKING MODAL -->
+<div id="booking-modal" class="modal-overlay">
+  <div class="modal-card">
+    <button class="modal-close" onclick="closeBookingModal()">✕</button>
+    <div class="badge badge-primary" style="margin-bottom: 12px;">1-on-1 Consultation</div>
+    <h3 style="font-size: 22px; margin-bottom: 8px; color: #fff;">Schedule with <span id="modal-counselor-name" style="color:#818cf8;">Advisor</span></h3>
+    <p style="font-size: 13.5px; color: var(--text-muted); margin-bottom: 20px;">Choose a convenient date and time for your personalized guidance call.</p>
+
+    <form onsubmit="confirmBooking(event)">
+      <div class="form-group">
+        <label>Select Date</label>
+        <div class="input-field-wrapper">
+          <input type="date" required value="2026-09-26">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Preferred Time Slot</label>
+        <div class="input-field-wrapper">
+          <select style="width: 100%; padding: 12px 16px; background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border-color); border-radius: var(--radius-md); color: #fff; font-size: 14.5px; outline: none;">
+            <option value="11am" style="background:#0f172a; color:#fff;">11:00 AM - 11:45 AM (EST)</option>
+            <option value="3pm" style="background:#0f172a; color:#fff;">03:00 PM - 03:45 PM (EST)</option>
+            <option value="7pm" style="background:#0f172a; color:#fff;">07:00 PM - 07:45 PM (EST)</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Primary Discussion Goal</label>
+        <div class="input-field-wrapper">
+          <input type="text" placeholder="e.g., Degree choice, Resume teardown, Tech career switch" required>
+        </div>
+      </div>
+
+      <button type="submit" class="btn-primary" style="width: 100%; margin-top: 10px;">Confirm & Book Appointment</button>
+    </form>
+  </div>
+</div>
+
+<!-- FOOTER -->
 <footer>
-  <p>© 2025 CareerPath. All rights reserved.</p>
+  <div class="footer-content">
+    <div class="footer-brand">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">✦</div>
+        Career<span>Path</span>
+      </a>
+      <p>Guiding students with proven roadmaps and direct industry mentorship.</p>
+    </div>
+
+    <div class="footer-col">
+      <h5>Tracks</h5>
+      <ul>
+        <li><a href="engineering.html">Engineering</a></li>
+        <li><a href="design.html">Design</a></li>
+        <li><a href="medicine.html">Medicine</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h5>Company</h5>
+      <ul>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="counselor.html">Counselors</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h5>Account</h5>
+      <ul>
+        <li><a href="signin.html">Sign In</a></li>
+        <li><a href="signup.html">Sign Up</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 CareerPath. All rights reserved.</p>
+    <p>Professional Mentorship Network.</p>
+  </div>
 </footer>
+
+<div id="toast-container"></div>
 
 </body>
 </html>
